@@ -30,6 +30,16 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(
               '$contador',
               style: const TextStyle(fontSize: HomeScreen.fontSize),
+            ),
+            
+            MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              color: Colors.red,
+              onPressed:(){
+                Navigator.pushReplacementNamed(context, 'login');
+              }, 
+            child: const Text('Inicio',style: TextStyle(color:Colors.white),)
             )
           ],
         )),
@@ -38,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             FloatingActionButton(
+              heroTag: 'btn1',
               onPressed: () {
                 setState(() {
                   contador--;
@@ -47,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: const Icon(Icons.exposure_minus_1, color: Colors.white),
             ),
             FloatingActionButton(
+              heroTag: 'btn2',
               onPressed: () {
                 setState(() {
                   contador=0;
@@ -56,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: const Icon(Icons.refresh, color: Colors.white),
             ),
             FloatingActionButton(
+              heroTag: 'btn3',
               onPressed: () {
                 setState(() {
                   contador++;
