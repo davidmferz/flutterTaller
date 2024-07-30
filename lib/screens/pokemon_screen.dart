@@ -24,7 +24,11 @@ class PokemonScreen extends StatelessWidget {
                 FontWeight.bold)
             ),
             const SizedBox(height: 16.0),
-            ElevatedButton(onPressed: () => {}, child: const Text('Capturar pokemon'))
+            ElevatedButton(
+              onPressed: () => {}, 
+              child: 
+              const Text('Capturar pokemon')
+            )
           ],
         ),
       ),
