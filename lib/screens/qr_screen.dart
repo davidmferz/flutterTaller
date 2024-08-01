@@ -43,6 +43,7 @@ class QrScreen extends StatelessWidget {
                 String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
                     '#ff6666', 'Cancel', true, ScanMode.QR);
                 if (barcodeScanRes != '-1') {
+                  Navigator.pushReplacementNamed(context, 'pokemon');
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Scanned: $barcodeScanRes')),
                   );

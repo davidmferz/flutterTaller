@@ -67,7 +67,7 @@ class _LoginForm extends StatelessWidget {
             MaterialButton(
               onPressed: () {
                 FocusScope.of(context).unfocus();
-                Navigator.pushReplacementNamed(context, 'home');
+                Navigator.pushReplacementNamed(context, 'qr');
               },
               color: Colors.deepPurple,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

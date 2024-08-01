@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:myapp/helpers/preferences.dart';
+import 'package:myapp/screens/pokemon_screen.dart';
 
 class QrScreen2 extends StatelessWidget {
   const QrScreen2({super.key});
@@ -43,6 +45,13 @@ class QrScreen2 extends StatelessWidget {
                 String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
                     '#ff6666', 'Cancel', true, ScanMode.QR);
                 if (barcodeScanRes != '-1') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          PokemonScreen(barcodeScanRes: barcodeScanRes),
+                    ),
+                  );
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Scanned: $barcodeScanRes')),
                   );
@@ -52,7 +61,7 @@ class QrScreen2 extends StatelessWidget {
             ),
           ],
         ),
-      ), 
-    ); 
+      ),
+    );
   }
 }
